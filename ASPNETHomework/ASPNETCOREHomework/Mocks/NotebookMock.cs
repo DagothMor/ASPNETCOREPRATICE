@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using ASPNETCOREHomework.Database.Domain;
 
 namespace ASPNETCOREHomework.Database.Mocks
 {
+	/// <summary>
+	/// Mock object for entity's collection of "Notebook"
+	/// </summary>
 	public static class NotebookMock
 	{
+		/// <summary>
+		/// Getting the collection of the "Notebook" entity.
+		/// </summary>
+		/// <returns>Entity collection "Notebook".</returns>
 		public static IEnumerable<Notebook> GetNotebooks()
 		{
 			return new List<Notebook>
