@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
+using ASPNETHomework.Services.Bootstrap;
+using ASPNETHomework.Services.Services;
+using AspNetLection.Common.Swagger;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace ASPNETHomework
 {
@@ -26,6 +24,9 @@ namespace ASPNETHomework
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+			services.ConfigureServices();
+			services.AddAutoMapper(typeof(NotebookService).GetTypeInfo().Assembly);
+			services.ConfigureSwagger();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +47,10 @@ namespace ASPNETHomework
 			{
 				endpoints.MapControllers();
 			});
+
+			app.UseCors();
+			app.UseOpenApi();
+			app.UseSwaggerUi3();
 		}
 	}
 }
