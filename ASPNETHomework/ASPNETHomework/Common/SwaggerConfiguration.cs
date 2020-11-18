@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace AspNetLection.Common.Swagger
+namespace ASPNETHomework.Common
 {
 	/// <summary>
 	/// Extension for Swagger configuration

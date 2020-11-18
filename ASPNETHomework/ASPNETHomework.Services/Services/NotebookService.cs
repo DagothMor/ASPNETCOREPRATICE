@@ -9,6 +9,9 @@ using AutoMapper;
 
 namespace ASPNETHomework.Services.Services
 {
+	/// <summary>
+	/// Service for work with data of "Notebook"
+	/// </summary>
 	public class NotebookService:INotebookService
 	{
 		private readonly IMapper _mapper;
@@ -17,6 +20,7 @@ namespace ASPNETHomework.Services.Services
 		{
 			_mapper = mapper;
 		}
+		/// <inheritdoc cref="INotebookService"/>
 		public IEnumerable<NotebookDto> Get()
 		{
 			var notebooks = NotebookMock.GetNotebooks();

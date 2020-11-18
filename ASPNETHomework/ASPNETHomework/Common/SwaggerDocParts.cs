@@ -1,4 +1,4 @@
-﻿namespace AspNetLection.Common.Swagger
+﻿namespace ASPNETHomework.Common
 {
 	/// <summary>
 	/// The constants for specifying API parts Swagger.

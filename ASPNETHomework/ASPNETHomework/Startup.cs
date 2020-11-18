@@ -1,7 +1,7 @@
 using System.Reflection;
+using ASPNETHomework.Common;
 using ASPNETHomework.Services.Bootstrap;
 using ASPNETHomework.Services.Services;
-using AspNetLection.Common.Swagger;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
