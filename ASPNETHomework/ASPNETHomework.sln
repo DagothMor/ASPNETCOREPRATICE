@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETHomework", "ASPNETHomework\ASPNETHomework.csproj", "{4E230B1D-DBF2-43C9-B5C9-862DD62F9B32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework", "ASPNETHomework\ASPNETHomework.csproj", "{4E230B1D-DBF2-43C9-B5C9-862DD62F9B32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETCOREHomework.Database", "ASPNETCOREHomework\ASPNETCOREHomework.Database.csproj", "{9476607B-648F-46E3-B171-9784332A0C52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCOREHomework.Database", "ASPNETCOREHomework\ASPNETCOREHomework.Database.csproj", "{9476607B-648F-46E3-B171-9784332A0C52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETHomework.Models", "ASPNETHomework.Models\ASPNETHomework.Models.csproj", "{FE4E9C9A-53EC-458B-9A5F-EB7A46E4304A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework.Models", "ASPNETHomework.Models\ASPNETHomework.Models.csproj", "{FE4E9C9A-53EC-458B-9A5F-EB7A46E4304A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETHomework.Services", "ASPNETHomework.Services\ASPNETHomework.Services.csproj", "{EA4ED6C5-64F8-46FD-A870-2044AF8DF361}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework.Services", "ASPNETHomework.Services\ASPNETHomework.Services.csproj", "{EA4ED6C5-64F8-46FD-A870-2044AF8DF361}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETHomework.DAL", "ASPNETHomework.DAL\ASPNETHomework.DAL.csproj", "{62DE0828-13DC-4F58-ACE5-F78CBB62767D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EA4ED6C5-64F8-46FD-A870-2044AF8DF361}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA4ED6C5-64F8-46FD-A870-2044AF8DF361}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA4ED6C5-64F8-46FD-A870-2044AF8DF361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62DE0828-13DC-4F58-ACE5-F78CBB62767D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62DE0828-13DC-4F58-ACE5-F78CBB62767D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62DE0828-13DC-4F58-ACE5-F78CBB62767D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62DE0828-13DC-4F58-ACE5-F78CBB62767D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
