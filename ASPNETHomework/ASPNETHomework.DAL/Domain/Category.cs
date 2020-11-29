@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace ASPNETHomework.DAL.Domain
@@ -12,6 +13,7 @@ namespace ASPNETHomework.DAL.Domain
 		/// <summary>
 		/// Type.
 		/// </summary>
+		[Required]
 		public string Type { get; set; }
 	}
 }

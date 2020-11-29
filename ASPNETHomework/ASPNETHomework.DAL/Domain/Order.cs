@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace ASPNETHomework.DAL.Domain
@@ -16,10 +17,12 @@ namespace ASPNETHomework.DAL.Domain
 		/// <summary>
 		/// Date of order.
 		/// </summary>
+		[Required]
 		public DateTime Date { get; set; }
 		/// <summary>
 		/// Time of order.
 		/// </summary>
+		[Required]
 		public DateTime Time { get; set; }
 	}
 }
