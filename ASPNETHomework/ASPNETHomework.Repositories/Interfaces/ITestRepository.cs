@@ -8,7 +8,7 @@ using ASPNETHomework.Models.DTO;
 
 namespace ASPNETHomework.Repositories.Interfaces
 {
-	interface ITestRepository:ICrudRepository<OrderDto,Order>
+	public interface ITestRepository : ICrudRepository<OrderDto, Order>
 	{
 	}
 }

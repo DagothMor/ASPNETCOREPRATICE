@@ -1,75 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ASPNETHomework.DAL.Contexts;
-using ASPNETHomework.DAL.Domain;
+using System.Threading;
+using System.Threading.Tasks;
 using ASPNETHomework.Models.DTO;
+using ASPNETHomework.Repositories.Interfaces;
 using ASPNETHomework.Services.Interfaces;
-using AutoMapper;
+using ASPNETHomework.Repositories.Interfaces.CRUD;
 
 namespace ASPNETHomework.Services.Services
 {
 	/// <summary>
-	/// Test service
+	/// Service for work data about Order.
 	/// </summary>
 	public class TestService : ITestService
 	{
-		private readonly IMapper _mapper;
-		private readonly AspNetHomeworkContext _context;
+		private readonly ITestRepository _repository;
 
-		public TestService(AspNetHomeworkContext context, IMapper mapper)
-		{
-			_context = context;
-			_mapper = mapper;
-		}
 		/// <summary>
-		/// <inheritdoc cref="ITestService"/>
+		/// IInitialize an instance <see cref="DressService"/>.
 		/// </summary>
-		/// <returns>List of products</returns>
-		public IEnumerable<OrderDto> Get()
+		/// <param name="repository">Repository.</param>
+		public TestService(ITestRepository repository)
 		{
-			var customer = new Customer
-			{
-				Id = Guid.NewGuid(),
-				FirstName = "firstname",
-				LastName = "firstnamovich"
+			_repository = repository;
+		}
 
-			};
-			var notebookCategory = new Category {Id = new Guid(), Type = "Notebook"};
-			var product1 = new Product
-			{
-				Id = Guid.NewGuid(),
-				Name = "Apple",
-				Category = notebookCategory,
-				Description = "Cool notebook!buy it now!!!",
-				Price = 12000,
-			};
-			var product2 = new Product
-			{
-				Id = Guid.NewGuid(),
-				Name = "Banana",
-				Category = notebookCategory,
-				Description = "very good notebook!Please buy or my boss fired me",
-				Price = 24000,
-			};
-			var order = new Order
-			{
-				Customer = customer,
-				Date = DateTime.Today,
-				Time = DateTime.UtcNow,
-				Id = Guid.NewGuid(),
-				Products = new List<Product>()
-			};
-			order.Products.Add(product1);
-			order.Products.Add(product2);
+		///<inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>
+		public async Task<OrderDto> CreateAsync(OrderDto dto)
+		{
+			return await _repository.CreateAsync(dto);
+		}
 
-			_context.Customers.Add(customer);
-			_context.Categories.Add(notebookCategory);
-			_context.Products.Add(product1);
-			_context.Products.Add(product2);
-			_context.Orders.Add(order);
-			return _mapper.Map<IEnumerable<OrderDto>>(_context.Orders);
+		/// <inheritdoc cref="IDeletable.DeleteAsync(Guid[])"/>
+		public async Task DeleteAsync(params Guid[] ids)
+		{
+			await _repository.DeleteAsync(ids);
+		}
 
+		/// <inheritdoc cref="IGettableById{TDto}.GetAsync(Guid, CancellationToken)"/>
+		public async Task<OrderDto> GetAsync(Guid id, CancellationToken token = default)
+		{
+			return await _repository.GetAsync(id);
+		}
+
+		/// <inheritdoc cref="IGettable{TDto}.GetAsync(CancellationToken)"/>
+		public async Task<IEnumerable<OrderDto>> GetAsync(CancellationToken token = default)
+		{
+			return await _repository.GetAsync(token);
+		}
+
+		/// <inheritdoc cref="IUpdatable{TDto}.UpdateAsync(TDto)"/>
+		public async Task<OrderDto> UpdateAsync(OrderDto dto)
+		{
+			return await _repository.UpdateAsync(dto);
 		}
 	}
 }
