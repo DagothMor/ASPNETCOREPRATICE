@@ -8,12 +8,12 @@ using AutoMapper;
 namespace ASPNETHomework.Repositories.Mappings
 {
 	/// <summary>
-	/// Профиль маппинга (одежда).
+	/// Mapping profile.
 	/// </summary>
 	public class TestProfile : Profile
 	{
 		/// <summary>
-		/// Инициализирует экземпляр <see cref="DressProfile"/>
+		/// Initialize an instance <see cref="TestProfile"/>
 		/// </summary>
 		public TestProfile()
 		{

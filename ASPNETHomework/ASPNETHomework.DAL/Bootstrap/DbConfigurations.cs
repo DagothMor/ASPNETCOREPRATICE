@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace ASPNETHomework.DAL.Bootstrap
 {
 	/// <summary>
-	/// Database configuration
+	/// Database configuration.
 	/// </summary>
 	public static class DbConfigurations
 	{

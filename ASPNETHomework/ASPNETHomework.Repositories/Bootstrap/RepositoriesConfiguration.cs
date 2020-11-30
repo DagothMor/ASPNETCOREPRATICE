@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ASPNETHomework.Repositories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ASPNETHomework.Repositories.Bootstrap
@@ -16,7 +17,7 @@ namespace ASPNETHomework.Repositories.Bootstrap
 		/// <param name="services">service collection from startup</param>
 		public static void ConfigureRepositories(this IServiceCollection services)
 		{
-
+			services.AddTransient<ITestRepository, TestRepository>();
 		}
 	}
 }

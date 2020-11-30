@@ -1,6 +1,9 @@
 using System.Reflection;
 using ASPNETHomework.Common;
+using ASPNETHomework.Controllers;
 using ASPNETHomework.DAL.Bootstrap;
+using ASPNETHomework.Repositories;
+using ASPNETHomework.Repositories.Bootstrap;
 using ASPNETHomework.Services.Bootstrap;
 using ASPNETHomework.Services.Services;
 using AutoMapper;
@@ -25,9 +28,12 @@ namespace ASPNETHomework
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.ConfigureDb(Configuration);
+			services.ConfigureRepositories();
 			services.AddControllers();
 			services.ConfigureServices();
-			services.AddAutoMapper(typeof(TestServiceGetRequest).GetTypeInfo().Assembly);
+			services.AddAutoMapper(
+				typeof(TestRepository).GetTypeInfo().Assembly,
+				typeof(TestController).GetTypeInfo().Assembly);
 			services.ConfigureSwagger();
 		}
 

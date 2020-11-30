@@ -18,7 +18,7 @@ namespace ASPNETHomework.Services.Services
 		private readonly ITestRepository _repository;
 
 		/// <summary>
-		/// IInitialize an instance <see cref="DressService"/>.
+		/// Initialize an instance <see cref="TestService"/>.
 		/// </summary>
 		/// <param name="repository">Repository.</param>
 		public TestService(ITestRepository repository)

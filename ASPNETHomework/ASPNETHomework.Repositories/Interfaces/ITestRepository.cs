@@ -10,5 +10,6 @@ namespace ASPNETHomework.Repositories.Interfaces
 {
 	public interface ITestRepository : ICrudRepository<OrderDto, Order>
 	{
+
 	}
 }

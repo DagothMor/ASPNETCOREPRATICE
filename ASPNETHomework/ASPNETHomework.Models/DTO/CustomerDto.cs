@@ -8,7 +8,7 @@ namespace ASPNETHomework.Models.DTO
 	/// <summary>
 	/// Customer Dto.
 	/// </summary>
-	class CustomerDto:BaseDto
+	class CustomerDto : BaseDto
 	{
 		/// <summary>
 		/// Customer's first name.
