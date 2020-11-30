@@ -8,7 +8,7 @@ using ASPNETHomework.Services.Interfaces.CRUD;
 namespace ASPNETHomework.Services.Interfaces
 {
 	/// <summary>
-	/// Test service:create,full and add in database tables.
+	/// Test service,implemented all CRUD operations.
 	/// </summary>
 	public interface ITestService : ICrudRepository<OrderDto>
 	{
