@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ASPNETCOREHomework\ASPNETCOREHomework.Database.csproj" />
+    <ProjectReference Include="..\ASPNETHomework.DAL\ASPNETHomework.DAL.csproj" />
   </ItemGroup>
 
 </Project>

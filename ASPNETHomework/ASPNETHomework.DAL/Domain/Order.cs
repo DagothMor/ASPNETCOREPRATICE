@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace ASPNETHomework.DAL.Domain
@@ -24,5 +25,9 @@ namespace ASPNETHomework.DAL.Domain
 		/// </summary>
 		[Required]
 		public DateTime Time { get; set; }
+		/// <summary>
+		/// Products
+		/// </summary>
+		public List<Product> Products { get; set; }
 	}
 }

@@ -27,7 +27,7 @@ namespace ASPNETHomework
 			services.ConfigureDb(Configuration);
 			services.AddControllers();
 			services.ConfigureServices();
-			services.AddAutoMapper(typeof(NotebookService).GetTypeInfo().Assembly);
+			services.AddAutoMapper(typeof(TestService).GetTypeInfo().Assembly);
 			services.ConfigureSwagger();
 		}
 

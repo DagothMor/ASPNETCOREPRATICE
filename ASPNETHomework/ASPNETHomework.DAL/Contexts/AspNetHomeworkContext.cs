@@ -37,8 +37,11 @@ namespace ASPNETHomework.DAL.Contexts
 		/// <param name="options">options for context configuration</param>
 		public AspNetHomeworkContext(DbContextOptions options) : base(options)
 		{
-			Database.EnsureCreated();//удаляет бд потом заного создает потому на будущее не заполняй 
-			Database.EnsureDeleted();//бд кучами данных 
+			///удаляет бд потом заного создает потому на будущее не заполняй
+			/// бд кучей данных
+			/// ревертнул по невнимательности
+			Database.EnsureDeleted();
+			Database.EnsureCreated();
 		}
 
 	}
