@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework.Models", "AS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework.Services", "ASPNETHomework.Services\ASPNETHomework.Services.csproj", "{EA4ED6C5-64F8-46FD-A870-2044AF8DF361}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETHomework.DAL", "ASPNETHomework.DAL\ASPNETHomework.DAL.csproj", "{62DE0828-13DC-4F58-ACE5-F78CBB62767D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework.DAL", "ASPNETHomework.DAL\ASPNETHomework.DAL.csproj", "{62DE0828-13DC-4F58-ACE5-F78CBB62767D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETHomework.Repositories", "ASPNETHomework.Repositories\ASPNETHomework.Repositories.csproj", "{1F9A5335-6980-4291-ACCC-FC2D8A21A7F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{62DE0828-13DC-4F58-ACE5-F78CBB62767D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62DE0828-13DC-4F58-ACE5-F78CBB62767D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62DE0828-13DC-4F58-ACE5-F78CBB62767D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F9A5335-6980-4291-ACCC-FC2D8A21A7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F9A5335-6980-4291-ACCC-FC2D8A21A7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F9A5335-6980-4291-ACCC-FC2D8A21A7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F9A5335-6980-4291-ACCC-FC2D8A21A7F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
