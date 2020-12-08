@@ -1,5 +1,9 @@
 using System.Reflection;
 using ASPNETHomework.Common;
+using ASPNETHomework.Controllers;
+using ASPNETHomework.DAL.Bootstrap;
+using ASPNETHomework.Repositories;
+using ASPNETHomework.Repositories.Bootstrap;
 using ASPNETHomework.Services.Bootstrap;
 using ASPNETHomework.Services.Services;
 using AutoMapper;
@@ -23,9 +27,13 @@ namespace ASPNETHomework
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.ConfigureDb(Configuration);
+			services.ConfigureRepositories();
 			services.AddControllers();
 			services.ConfigureServices();
-			services.AddAutoMapper(typeof(NotebookService).GetTypeInfo().Assembly);
+			services.AddAutoMapper(
+				typeof(TestRepository).GetTypeInfo().Assembly,
+				typeof(TestController).GetTypeInfo().Assembly);
 			services.ConfigureSwagger();
 		}
 
