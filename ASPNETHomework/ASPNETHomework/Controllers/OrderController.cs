@@ -71,7 +71,7 @@ namespace ASPNETHomework.Controllers
 		/// <returns>Entity order.</returns>
 		[HttpPost]
 		[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OrderResponse))]
-		public async Task<IActionResult> PostAsync(CreateTestRequest request, CancellationToken cancellationToken)
+		public async Task<IActionResult> PostAsync(CreateOrderRequest request, CancellationToken cancellationToken)
 		{
 			_logger.LogInformation("Order/Post was requested.");
 			var response = await _testService.CreateAsync(_mapper.Map<OrderDto>(request));
@@ -84,7 +84,7 @@ namespace ASPNETHomework.Controllers
 		/// <returns>Entity order.</returns>
 		[HttpPut]
 		[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OrderResponse))]
-		public async Task<IActionResult> PutAsync(UpdateTestRequest request, CancellationToken cancellationToken)
+		public async Task<IActionResult> PutAsync(UpdateOrderRequest request, CancellationToken cancellationToken)
 		{
 			_logger.LogInformation("Order/Put was requested.");
 			var response = await _testService.UpdateAsync(_mapper.Map<OrderDto>(request));

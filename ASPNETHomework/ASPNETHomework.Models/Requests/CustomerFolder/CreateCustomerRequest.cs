@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
+using ASPNETHomework.DAL.Domain;
 
-namespace ASPNETHomework.Models.DTO
+
+namespace ASPNETHomework.Models.Requests.CustomerFolder
 {
 	/// <summary>
-	/// Customer Dto.
+	/// Request for create a Customer.
 	/// </summary>
-	public class CustomerDto : BaseDto
+	public class CreateCustomerRequest
 	{
 		/// <summary>
 		/// Customer's first name.
 		/// </summary>
+		[Required]
 		public string FirstName { get; set; }
 		/// <summary>
 		/// Customer's last name.
 		/// </summary>
+		[Required]
 		public string LastName { get; set; }
 	}
 }

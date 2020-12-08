@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 using ASPNETHomework.Repositories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +16,7 @@ namespace ASPNETHomework.Repositories.Bootstrap
 		public static void ConfigureRepositories(this IServiceCollection services)
 		{
 			services.AddTransient<IOrderRepository, OrderRepository>();
+			services.AddTransient<ICustomerRepository,CustomerRepository>();
 		}
 	}
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 using ASPNETHomework.DAL.Domain;
 
 namespace ASPNETHomework.Models.Requests.Order
@@ -9,13 +8,13 @@ namespace ASPNETHomework.Models.Requests.Order
 	/// <summary>
 	/// Request for create an order
 	/// </summary>
-	public class CreateTestRequest
+	public class CreateOrderRequest
 	{
 		/// <summary>
 		/// Customer.
 		/// </summary>
 		[Required]
-		public Customer Customer { get; set; }
+		public Customer Customers { get; set; }
 		/// <summary>
 		/// Date of order.
 		/// </summary>

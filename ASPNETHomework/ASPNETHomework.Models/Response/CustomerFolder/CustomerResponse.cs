@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ASPNETHomework.Models.DTO
+namespace ASPNETHomework.Models.Response.CustomerFolder
 {
 	/// <summary>
-	/// Customer Dto.
+	/// Responds to request for a customer
 	/// </summary>
-	public class CustomerDto : BaseDto
+	public class CustomerResponse
 	{
+		/// <summary>
+		/// Customer's identification.
+		/// </summary>
+		public int Id { get; set; }
 		/// <summary>
 		/// Customer's first name.
 		/// </summary>

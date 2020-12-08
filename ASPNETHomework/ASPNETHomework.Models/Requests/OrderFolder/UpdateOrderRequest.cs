@@ -8,7 +8,7 @@ namespace ASPNETHomework.Models.Requests.Order
 	/// <summary>
 	/// Request for update an order
 	/// </summary>
-	public class UpdateTestRequest:CreateTestRequest
+	public class UpdateOrderRequest : CreateOrderRequest
 	{
 		/// <summary>
 		/// Entity identification.

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using ASPNETHomework.DAL.Domain;
 using ASPNETHomework.Models.DTO;
+using ASPNETHomework.Repositories.Interfaces.CRUD;
 using ASPNETHomework.Services.Interfaces.CRUD;
 
 namespace ASPNETHomework.Services.Interfaces
 {
 	/// <summary>
-	/// Order service,implemented all CRUD operations.
+	/// Customer service,implemented all CRUD operations.
 	/// </summary>
-	public interface IOrderService : ICrudRepository<OrderDto>
+	public interface ICustomerService : ICrudRepository<CustomerDto>
 	{
-
 	}
 }
