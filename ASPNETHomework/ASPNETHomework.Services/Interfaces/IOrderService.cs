@@ -10,7 +10,7 @@ namespace ASPNETHomework.Services.Interfaces
 	/// <summary>
 	/// Test service,implemented all CRUD operations.
 	/// </summary>
-	public interface ITestService : ICrudRepository<OrderDto>
+	public interface IOrderService : ICrudRepository<OrderDto>
 	{
 
 	}

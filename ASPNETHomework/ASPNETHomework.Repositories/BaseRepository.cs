@@ -46,8 +46,8 @@ namespace ASPNETHomework.Repositories
             return await GetAsync(entity.Id);
         }
 
-        /// <inheritdoc cref="IDeletable{TDto, TModel}.DeleteAsync(Guid[])"/>
-        public async Task DeleteAsync(params Guid[] ids)
+        /// <inheritdoc cref="IDeletable{TDto, TModel}.DeleteAsync(int[])"/>
+        public async Task DeleteAsync(params int[] ids)
         {
             var entities = await DbSet
                                 .Where(x => ids.Contains(x.Id))
@@ -57,8 +57,8 @@ namespace ASPNETHomework.Repositories
             await _сontext.SaveChangesAsync();
         }
 
-        /// <inheritdoc cref="IGettableById{TDto, TModel}.GetAsync(Guid)"/>
-        public async Task<TDto> GetAsync(Guid id)
+        /// <inheritdoc cref="IGettableById{TDto, TModel}.GetAsync(int)"/>
+        public async Task<TDto> GetAsync(int id)
         {
             var entity = await DbSet
                               .AsNoTracking()

@@ -12,6 +12,6 @@ namespace ASPNETHomework.Models.DTO
 		/// <summary>
 		/// Identification.
 		/// </summary>
-		public Guid Id { get; set; }
+		public int Id { get; set; }
 	}
 }

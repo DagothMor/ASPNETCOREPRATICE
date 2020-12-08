@@ -10,12 +10,12 @@ namespace ASPNETHomework.Services.Mappings
 	/// <summary>
 	/// Mapping profile "Notebook"
 	/// </summary>
-	public class TestProfile : Profile
+	public class OrderProfile : Profile
 	{
 		/// <summary>
-		/// Initializes an instant  <see cref="TestProfile"/>
+		/// Initializes an instant  <see cref="OrderProfile"/>
 		/// </summary>
-		public TestProfile()
+		public OrderProfile()
 		{
 			CreateMap<Order,OrderDto>().ReverseMap();
 		}

@@ -14,6 +14,6 @@ namespace ASPNETHomework.Models.Requests.Order
 		/// Entity identification.
 		/// </summary>
 		[Required]
-		public Guid Id { get; set; }
+		public int Id { get; set; }
 	}
 }

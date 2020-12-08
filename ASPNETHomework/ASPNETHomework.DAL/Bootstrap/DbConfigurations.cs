@@ -13,9 +13,9 @@ namespace ASPNETHomework.DAL.Bootstrap
 	/// </summary>
 	public static class DbConfigurations
 	{
-		public static void ConfigureDb(this
-			IServiceCollection services,
-			IConfiguration configuration)
+		public static void ConfigureDb(
+			this IServiceCollection services,
+					IConfiguration configuration)
 		{
 			services.AddDbContext<AspNetHomeworkContext>(
 				options => options.UseNpgsql(

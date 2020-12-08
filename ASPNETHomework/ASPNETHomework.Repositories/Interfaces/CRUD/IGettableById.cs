@@ -17,6 +17,6 @@ namespace ASPNETHomework.Repositories.Interfaces.CRUD
 		/// </summary>
 		/// <param name="id">Identification.</param>
 		/// <returns>Entity instance.</returns>
-		Task<TDto> GetAsync(Guid id);
+		Task<TDto> GetAsync(int id);
 	}
 }

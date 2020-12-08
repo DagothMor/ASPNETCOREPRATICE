@@ -10,12 +10,12 @@ namespace ASPNETHomework.Repositories.Mappings
 	/// <summary>
 	/// Mapping profile.
 	/// </summary>
-	public class TestProfile : Profile
+	public class OrderProfile : Profile
 	{
 		/// <summary>
-		/// Initialize an instance <see cref="TestProfile"/>
+		/// Initialize an instance <see cref="OrderProfile"/>
 		/// </summary>
-		public TestProfile()
+		public OrderProfile()
 		{
 			CreateMap<Order, OrderDto>().ReverseMap();
 		}

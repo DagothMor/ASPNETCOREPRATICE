@@ -32,8 +32,8 @@ namespace ASPNETHomework
 			services.AddControllers();
 			services.ConfigureServices();
 			services.AddAutoMapper(
-				typeof(TestRepository).GetTypeInfo().Assembly,
-				typeof(TestController).GetTypeInfo().Assembly);
+				typeof(OrderRepository).GetTypeInfo().Assembly,
+				typeof(OrderController).GetTypeInfo().Assembly);
 			services.ConfigureSwagger();
 		}
 

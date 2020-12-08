@@ -40,8 +40,8 @@ namespace ASPNETHomework.DAL.Contexts
 			///удаляет бд потом заного создает потому на будущее не заполняй
 			/// бд кучей данных
 			/// ревертнул по невнимательности
-			Database.EnsureDeleted();
-			Database.EnsureCreated();
+			//Database.EnsureDeleted();
+			//Database.EnsureCreated();
 		}
 
 	}

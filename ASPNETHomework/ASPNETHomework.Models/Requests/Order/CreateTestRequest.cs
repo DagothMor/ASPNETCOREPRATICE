@@ -20,12 +20,7 @@ namespace ASPNETHomework.Models.Requests.Order
 		/// Date of order.
 		/// </summary>
 		[Required]
-		public DateTime Date { get; set; }
-		/// <summary>
-		/// Time of order.
-		/// </summary>
-		[Required]
-		public DateTime Time { get; set; }
+		public DateTime DateTimeOffset { get; set; }
 		/// <summary>
 		/// Array of products
 		/// </summary>

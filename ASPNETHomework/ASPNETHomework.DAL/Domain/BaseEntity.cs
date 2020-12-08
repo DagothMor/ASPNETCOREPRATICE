@@ -16,6 +16,6 @@ namespace ASPNETHomework.DAL.Domain
 		/// </summary>
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public Guid Id { get; set; }
+		public int Id { get; set; }
 	}
 }

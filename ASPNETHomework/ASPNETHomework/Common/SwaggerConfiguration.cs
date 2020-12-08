@@ -15,9 +15,9 @@ namespace ASPNETHomework.Common
 		{
 			services.AddSwaggerDocument(c =>
 				{
-					c.Title = "Test";
-					c.DocumentName = SwaggerDocParts.Test;
-					c.ApiGroupNames = new[] { SwaggerDocParts.Test };
+					c.Title = "Order";
+					c.DocumentName = SwaggerDocParts.Order;
+					c.ApiGroupNames = new[] { SwaggerDocParts.Order };
 				})
 				.AddSwaggerDocument(c =>
 				{

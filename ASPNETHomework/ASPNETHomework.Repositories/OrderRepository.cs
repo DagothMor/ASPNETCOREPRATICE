@@ -12,14 +12,14 @@ namespace ASPNETHomework.Repositories
 	/// <summary>
 	/// Repository for work with entity "Order".
 	/// </summary>
-	public class TestRepository : BaseRepository<OrderDto, Order>, ITestRepository
+	public class OrderRepository : BaseRepository<OrderDto, Order>, IOrderRepository
 	{
 		/// <summary>
-		/// initialize an instance <see cref="TestRepository"/>.
+		/// initialize an instance <see cref="OrderRepository"/>.
 		/// </summary>
 		/// <param name="context">Data context.</param>
 		/// <param name="mapper">Mapper.</param>
-		public TestRepository(AspNetHomeworkContext context, IMapper mapper) : base(context, mapper)
+		public OrderRepository(AspNetHomeworkContext context, IMapper mapper) : base(context, mapper)
 		{
 		}
 	}

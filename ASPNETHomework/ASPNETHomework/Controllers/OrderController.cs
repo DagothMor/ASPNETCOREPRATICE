@@ -19,20 +19,20 @@ namespace ASPNETHomework.Controllers
 	/// </summary>
 	[ApiController]
 	[Route("[controller]")]
-	[ApiExplorerSettings(GroupName = SwaggerDocParts.Test)]
-	public class TestController : ControllerBase
+	[ApiExplorerSettings(GroupName = SwaggerDocParts.Order)]
+	public class OrderController : ControllerBase
 	{
-		private readonly ILogger<TestController> _logger;
-		private readonly ITestService _testService;
+		private readonly ILogger<OrderController> _logger;
+		private readonly IOrderService _testService;
 		private readonly IMapper _mapper;
 
 		/// <summary>
-		/// Initialize an instance <see cref="TestController"/>
+		/// Initialize an instance <see cref="OrderController"/>
 		/// </summary>
 		/// <param name="testService">Order Service.</param>
 		/// <param name="logger">Logger.</param>
 		/// <param name="mapper">Mapper.</param>
-		public TestController(ITestService testService, ILogger<TestController> logger, IMapper mapper)
+		public OrderController(IOrderService testService, ILogger<OrderController> logger, IMapper mapper)
 		{
 			_testService = testService;
 			_logger = logger;
@@ -58,7 +58,7 @@ namespace ASPNETHomework.Controllers
 		/// <returns>Entity order.</returns>
 		[HttpGet("{id}")]
 		[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OrderResponse))]
-		public async Task<IActionResult> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+		public async Task<IActionResult> GetByIdAsync(int id, CancellationToken cancellationToken)
 		{
 			_logger.LogInformation("Order/GetById was requested.");
 			var response = await _testService.GetAsync(id, cancellationToken);
@@ -96,7 +96,7 @@ namespace ASPNETHomework.Controllers
 		/// </summary>
 		[HttpDelete]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
-		public async Task<IActionResult> DeleteAsync(CancellationToken cancellationToken, params Guid[] ids)
+		public async Task<IActionResult> DeleteAsync(CancellationToken cancellationToken, params int[] ids)
 		{
 			_logger.LogInformation("Order/Delete was requested.");
 			await _testService.DeleteAsync(ids);

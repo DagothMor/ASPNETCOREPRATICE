@@ -15,6 +15,6 @@ namespace ASPNETHomework.Services.Interfaces.CRUD
 		/// </summary>
 		/// <param name="id">Identification.</param>
 		/// <returns>Entity instance.</returns>
-		Task<TDto> GetAsync(Guid id, CancellationToken token = default);
+		Task<TDto> GetAsync(int id, CancellationToken token = default);
 	}
 }

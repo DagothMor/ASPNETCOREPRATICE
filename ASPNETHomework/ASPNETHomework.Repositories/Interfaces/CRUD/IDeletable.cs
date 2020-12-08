@@ -17,6 +17,6 @@ namespace ASPNETHomework.Repositories.Interfaces.CRUD
 		/// </summary>
 		/// <param name="ids">Identifications.</param>
 		/// <returns>task,which return async operation.</returns>
-		Task DeleteAsync(params Guid[] ids);
+		Task DeleteAsync(params int[] ids);
 	}
 }

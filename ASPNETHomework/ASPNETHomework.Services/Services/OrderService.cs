@@ -13,15 +13,15 @@ namespace ASPNETHomework.Services.Services
 	/// <summary>
 	/// Service for work data about Order.
 	/// </summary>
-	public class TestService : ITestService
+	public class OrderService : IOrderService
 	{
-		private readonly ITestRepository _repository;
+		private readonly IOrderRepository _repository;
 
 		/// <summary>
-		/// Initialize an instance <see cref="TestService"/>.
+		/// Initialize an instance <see cref="OrderService"/>.
 		/// </summary>
 		/// <param name="repository">Repository.</param>
-		public TestService(ITestRepository repository)
+		public OrderService(IOrderRepository repository)
 		{
 			_repository = repository;
 		}
@@ -32,14 +32,14 @@ namespace ASPNETHomework.Services.Services
 			return await _repository.CreateAsync(dto);
 		}
 
-		/// <inheritdoc cref="IDeletable.DeleteAsync(Guid[])"/>
-		public async Task DeleteAsync(params Guid[] ids)
+		/// <inheritdoc cref="IDeletable.DeleteAsync(int[])"/>
+		public async Task DeleteAsync(params int[] ids)
 		{
 			await _repository.DeleteAsync(ids);
 		}
 
-		/// <inheritdoc cref="IGettableById{TDto}.GetAsync(Guid, CancellationToken)"/>
-		public async Task<OrderDto> GetAsync(Guid id, CancellationToken token = default)
+		/// <inheritdoc cref="IGettableById{TDto}.GetAsync(int, CancellationToken)"/>
+		public async Task<OrderDto> GetAsync(int id, CancellationToken token = default)
 		{
 			return await _repository.GetAsync(id);
 		}
