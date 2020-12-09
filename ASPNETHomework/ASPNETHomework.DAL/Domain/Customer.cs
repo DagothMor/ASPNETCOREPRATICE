@@ -20,5 +20,18 @@ namespace ASPNETHomework.DAL.Domain
 		/// </summary>
 		[StringLength(25)]
 		public string LastName { get; set; }
+		/// <summary>
+		/// Customer's money
+		/// </summary>
+		public float Money { get; set; }
+		/// <summary>
+		/// Customer's address
+		/// </summary>
+		public string Address { get; set; }
+
+		/// <summary>
+		/// Customer's supply.
+		/// </summary>
+		public virtual List<Order> Orders { get; set; }//why virtual?
 	}
 }

@@ -14,6 +14,8 @@ namespace ASPNETHomework.DAL.Domain
 		/// <summary>
 		/// Customer.
 		/// </summary>
+		public int CustomerId { get; set; }
+		[ForeignKey("Id")]
 		public Customer Customer { get; set; }
 		/// <summary>
 		/// Date of order.
@@ -23,6 +25,6 @@ namespace ASPNETHomework.DAL.Domain
 		/// <summary>
 		/// Products
 		/// </summary>
-		public List<Product> Products { get; set; }
+		public ICollection<Product> Products { get; set; }// efc tutor say that's correct instead of list.
 	}
 }

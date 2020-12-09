@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace ASPNETHomework.DAL.Domain
@@ -29,5 +30,24 @@ namespace ASPNETHomework.DAL.Domain
 		/// </summary>
 		[Required]
 		public double Price { get; set; }
+		/// <summary>
+		/// Many to many with order.
+		/// </summary>
+		public virtual List<Order> Orders { get; set; }
+
+		/// <summary>
+		/// Provider.
+		/// </summary>
+		public Provider Provider { get; set; }
+
+		/// <summary>
+		/// Provider identity.
+		/// </summary>
+		public int ProviderId { get; set; }
+
+		/// <summary>
+		/// Availabilities current product in stores.
+		/// </summary>
+		public ICollection<Availability> Availabilities { get; set; }
 	}
 }

@@ -21,5 +21,10 @@ namespace ASPNETHomework.Models.Requests.CustomerFolder
 		/// </summary>
 		[Required]
 		public string LastName { get; set; }
+		/// <summary>
+		/// Customer's money.
+		/// </summary>
+		[Required]
+		public float Money { get; set; }
 	}
 }

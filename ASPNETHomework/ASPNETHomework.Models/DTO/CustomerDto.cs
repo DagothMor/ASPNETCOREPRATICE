@@ -18,5 +18,9 @@ namespace ASPNETHomework.Models.DTO
 		/// Customer's last name.
 		/// </summary>
 		public string LastName { get; set; }
+		/// <summary>
+		/// Customer's money
+		/// </summary>
+		public float Money { get; set; }
 	}
 }

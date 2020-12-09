@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ASPNETHomework.DAL.Domain;
+using ASPNETHomework.DAL.Fluent;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASPNETHomework.DAL.Contexts
@@ -43,6 +44,13 @@ namespace ASPNETHomework.DAL.Contexts
 			//Database.EnsureDeleted();
 			//Database.EnsureCreated();
 		}
-
+		/// <summary>
+		/// Entity creating rules.
+		/// </summary>
+		/// <param name="builder">Model builder.</param>
+		protected override void OnModelCreating(ModelBuilder builder)
+		{
+			builder.ApplyConfiguration(new AvailabilityConfig());
+		}
 	}
 }
