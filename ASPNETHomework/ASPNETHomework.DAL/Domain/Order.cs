@@ -11,11 +11,6 @@ namespace ASPNETHomework.DAL.Domain
 	/// </summary>
 	public class Order : BaseEntity
 	{
-		/// <summary>
-		/// Customer.
-		/// </summary>
-		public int CustomerId { get; set; }
-		[ForeignKey("Id")]
 		public Customer Customer { get; set; }
 		/// <summary>
 		/// Date of order.

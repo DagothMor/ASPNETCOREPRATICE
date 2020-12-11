@@ -18,11 +18,6 @@ namespace ASPNETHomework.DAL.Contexts
 		public DbSet<Order> Orders { get; set; }
 
 		/// <summary>
-		/// Categories.
-		/// </summary>
-		public DbSet<Category> Categories { get; set; }
-
-		/// <summary>
 		/// Customers.
 		/// </summary>
 		public DbSet<Customer> Customers { get; set; }
@@ -31,6 +26,17 @@ namespace ASPNETHomework.DAL.Contexts
 		/// Products.
 		/// </summary>
 		public DbSet<Product> Products { get; set; }
+		/// <summary>
+		/// Categories.
+		/// </summary>
+		public DbSet<Category> Categories { get; set; }
+		/// <summary>
+		/// Availabilities.
+		/// </summary>
+
+		public DbSet<Availability> Availabilities { get; set; }
+
+		public DbSet<Shop> Shops { get; set; }
 
 		/// <summary>
 		/// Initialize an instance <see cref="AspNetHomeworkContext"/>
@@ -42,7 +48,7 @@ namespace ASPNETHomework.DAL.Contexts
 			/// бд кучей данных
 			/// ревертнул по невнимательности
 			//Database.EnsureDeleted();
-			//Database.EnsureCreated();
+			Database.EnsureCreated();
 		}
 		/// <summary>
 		/// Entity creating rules.

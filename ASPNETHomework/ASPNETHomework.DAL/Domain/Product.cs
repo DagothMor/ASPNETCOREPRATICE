@@ -34,17 +34,6 @@ namespace ASPNETHomework.DAL.Domain
 		/// Many to many with order.
 		/// </summary>
 		public virtual List<Order> Orders { get; set; }
-
-		/// <summary>
-		/// Provider.
-		/// </summary>
-		public Provider Provider { get; set; }
-
-		/// <summary>
-		/// Provider identity.
-		/// </summary>
-		public int ProviderId { get; set; }
-
 		/// <summary>
 		/// Availabilities current product in stores.
 		/// </summary>

@@ -25,9 +25,9 @@ namespace ASPNETHomework.DAL.Domain
 		/// </summary>
 		public float Money { get; set; }
 		/// <summary>
-		/// Customer's address
+		/// Customer's City
 		/// </summary>
-		public string Address { get; set; }
+		public string City { get; set; }
 
 		/// <summary>
 		/// Customer's supply.

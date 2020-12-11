@@ -26,5 +26,9 @@ namespace ASPNETHomework.Models.Requests.CustomerFolder
 		/// </summary>
 		[Required]
 		public float Money { get; set; }
+		/// <summary>
+		/// Customer's City
+		/// </summary>
+		public string City { get; set; }
 	}
 }

@@ -22,5 +22,10 @@ namespace ASPNETHomework.Models.DTO
 		/// Customer's money
 		/// </summary>
 		public float Money { get; set; }
+
+		/// <summary>
+		/// Customer's City
+		/// </summary>
+		public string City { get; set; }
 	}
 }
