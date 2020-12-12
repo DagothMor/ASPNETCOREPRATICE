@@ -29,6 +29,7 @@ namespace ASPNETHomework.Models.Requests.CustomerFolder
 		/// <summary>
 		/// Customer's City
 		/// </summary>
+		[Required]
 		public string City { get; set; }
 	}
 }

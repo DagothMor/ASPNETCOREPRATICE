@@ -26,17 +26,26 @@ namespace ASPNETHomework.DAL.Contexts
 		/// Products.
 		/// </summary>
 		public DbSet<Product> Products { get; set; }
+
 		/// <summary>
 		/// Categories.
 		/// </summary>
 		public DbSet<Category> Categories { get; set; }
+
 		/// <summary>
 		/// Availabilities.
 		/// </summary>
-
 		public DbSet<Availability> Availabilities { get; set; }
 
+		/// <summary>
+		/// Shops.
+		/// </summary>
 		public DbSet<Shop> Shops { get; set; }
+
+		/// <summary>
+		/// Providers.
+		/// </summary>
+		public DbSet<Provider> Providers { get; set; }
 
 		/// <summary>
 		/// Initialize an instance <see cref="AspNetHomeworkContext"/>
@@ -44,11 +53,6 @@ namespace ASPNETHomework.DAL.Contexts
 		/// <param name="options">options for context configuration</param>
 		public AspNetHomeworkContext(DbContextOptions options) : base(options)
 		{
-			///удаляет бд потом заного создает потому на будущее не заполняй
-			/// бд кучей данных
-			/// ревертнул по невнимательности
-			//Database.EnsureDeleted();
-			Database.EnsureCreated();
 		}
 		/// <summary>
 		/// Entity creating rules.

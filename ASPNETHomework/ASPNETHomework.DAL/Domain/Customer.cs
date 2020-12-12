@@ -32,6 +32,6 @@ namespace ASPNETHomework.DAL.Domain
 		/// <summary>
 		/// Customer's supply.
 		/// </summary>
-		public virtual List<Order> Orders { get; set; }//why virtual?
+		public virtual List<Order> Orders { get; set; }//why virtual?navi prop!
 	}
 }

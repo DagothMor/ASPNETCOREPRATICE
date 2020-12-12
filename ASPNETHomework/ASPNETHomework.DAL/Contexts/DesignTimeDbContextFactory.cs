@@ -7,15 +7,15 @@ using Microsoft.Extensions.Configuration;
 namespace ASPNETHomework.DAL.Contexts
 {
 	/// <summary>
-	/// Фабрика для создания нового контекста в процессе миграций.
+	/// Factory for creating new context in migration process.
 	/// </summary>
 	internal sealed class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<AspNetHomeworkContext>
 	{
 		/// <summary>
-		/// Создание контекста для миграций.
+		/// Creating context for migration.
 		/// </summary>
-		/// <param name="args">Строковые аршументы миграций.</param>
-		/// <returns>Контекст.</returns>
+		/// <param name="args">migration string arguments.</param>
+		/// <returns>Context.</returns>
 		public AspNetHomeworkContext CreateDbContext(string[] args)
 		{	
 			var configuration = new ConfigurationBuilder()
