@@ -30,26 +30,7 @@ namespace ASPNETHomework.Models.Response.ProductFolder
 		/// </summary>
 		[Required]
 		public double Price { get; set; }
-
-		/// <summary>
-		/// Provider.
-		/// </summary>
-		public Provider Provider { get; set; }
-
-		/// <summary>
-		/// Provider's identification.
-		/// </summary>
-		public long ProviderId { get; set; }
-
-		/// <summary>
-		/// Many to many with order.
-		/// </summary>
-		public virtual List<Order> Orders { get; set; }
-
-		/// <summary>
-		/// Availabilities current product in stores.
-		/// </summary>
-		public ICollection<Availability> Availabilities { get; set; }
+		
 		/// <summary>
 		/// Provider name.
 		/// </summary>

@@ -23,8 +23,9 @@ namespace ASPNETHomework.Repositories.Repositories
         where TModel : BaseEntity
     {
         private readonly IMapper _mapper;
+
         protected readonly AspNetHomeworkContext _сontext;
-        protected DbSet<TModel> DbSet => _сontext.Set<TModel>();
+        protected DbSet<TModel> _dbSet => _сontext.Set<TModel>();
 
         /// <summary>
         /// Initialize an instance <see cref="BaseRepository{TDto, TModel}"/>.
@@ -41,7 +42,7 @@ namespace ASPNETHomework.Repositories.Repositories
         public async Task<TDto> CreateAsync(TDto dto)
         {
             var entity = _mapper.Map<TModel>(dto);
-            await DbSet.AddAsync(entity);
+            await _dbSet.AddAsync(entity);
             await _сontext.SaveChangesAsync();
             return await GetAsync(entity.Id);
         }
@@ -49,7 +50,7 @@ namespace ASPNETHomework.Repositories.Repositories
         /// <inheritdoc cref="IDeletable{TDto, TModel}.DeleteAsync(int[])"/>
         public async Task DeleteAsync(params int[] ids)
         {
-            var entities = await DbSet
+            var entities = await _dbSet
                                 .Where(x => ids.Contains(x.Id))
                                 .ToListAsync();
 
@@ -60,10 +61,9 @@ namespace ASPNETHomework.Repositories.Repositories
         /// <inheritdoc cref="IGettableById{TDto, TModel}.GetAsync(int)"/>
         public async Task<TDto> GetAsync(int id)
         {
-            var entity = await DbSet
-                              .AsNoTracking()
-                              .FirstOrDefaultAsync(x => x.Id == id);
-
+	        var entity = await DefaultIncludeProperties(_dbSet)
+                .AsNoTracking()
+		        .FirstOrDefaultAsync(x => x.Id == id);
             var dto = _mapper.Map<TDto>(entity);
 
             return dto;
@@ -83,7 +83,7 @@ namespace ASPNETHomework.Repositories.Repositories
         /// <inheritdoc cref="IGettable{TDto, TModel}.GetAsync(CancellationToken)"/>
         public async Task<IEnumerable<TDto>> GetAsync(CancellationToken token = default)
         {
-            var entities = await DbSet.AsNoTracking().ToListAsync();
+            var entities = await _dbSet.AsNoTracking().ToListAsync();
 
             var dtos = _mapper.Map<IEnumerable<TDto>>(entities);
 
@@ -93,7 +93,7 @@ namespace ASPNETHomework.Repositories.Repositories
         /// <summary>
         /// Added to selection related parameter's.
         /// </summary>
-        /// <param name="dbSet">DbSet collection of repository.</param>
+        /// <param name="dbSet ">DbSet collection of repository.</param>
         protected virtual IQueryable<TModel> DefaultIncludeProperties(DbSet<TModel> dbSet) => dbSet;
     }
 }
