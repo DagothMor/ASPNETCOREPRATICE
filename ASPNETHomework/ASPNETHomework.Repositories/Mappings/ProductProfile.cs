@@ -5,16 +5,16 @@ using AutoMapper;
 namespace ASPNETHomework.Repositories.Mappings
 {
 	/// <summary>
-	/// Mapping profile.
+	/// Product profile.
 	/// </summary>
-	public class OrderProfile : Profile
+	public class ProductProfile : Profile
 	{
 		/// <summary>
-		/// Initialize an instance <see cref="OrderProfile"/>
+		/// Initialize an instance <see cref="ProductProfile"/>
 		/// </summary>
-		public OrderProfile()
+		public ProductProfile()
 		{
-			CreateMap<Order, OrderDto>().ReverseMap();
+			CreateMap<Product, ProductDto>().ReverseMap();
 		}
 	}
 }

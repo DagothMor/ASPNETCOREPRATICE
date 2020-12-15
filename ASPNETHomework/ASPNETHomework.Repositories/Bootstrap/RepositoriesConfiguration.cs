@@ -1,5 +1,6 @@
 ﻿
 using ASPNETHomework.Repositories.Interfaces;
+using ASPNETHomework.Repositories.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ASPNETHomework.Repositories.Bootstrap
@@ -17,6 +18,7 @@ namespace ASPNETHomework.Repositories.Bootstrap
 		{
 			services.AddTransient<IOrderRepository, OrderRepository>();
 			services.AddTransient<ICustomerRepository,CustomerRepository>();
+			services.AddTransient<IProductRepository, ProductRepository>();
 		}
 	}
 }

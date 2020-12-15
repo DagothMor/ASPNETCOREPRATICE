@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
+using ASPNETHomework.DAL.Domain;
 
-namespace ASPNETHomework.DAL.Domain
+namespace ASPNETHomework.Models.Requests.ProductFolder
 {
-	/// <summary>
-	/// Customer.
-	/// </summary>
-	public class Customer : BaseEntity
+	public class CreateProductRequest
 	{
 		/// <summary>
 		/// Customer's first name.

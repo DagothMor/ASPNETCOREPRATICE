@@ -7,10 +7,10 @@ using ASPNETHomework.Models.DTO;
 using ASPNETHomework.Repositories.Interfaces;
 using AutoMapper;
 
-namespace ASPNETHomework.Repositories
+namespace ASPNETHomework.Repositories.Repositories
 {
 	/// <summary>
-	/// Repository for work with entity "Order".
+	/// Repository for work with entity "Customer".
 	/// </summary>
 	public class CustomerRepository : BaseRepository<CustomerDto, Customer>, ICustomerRepository
 	{

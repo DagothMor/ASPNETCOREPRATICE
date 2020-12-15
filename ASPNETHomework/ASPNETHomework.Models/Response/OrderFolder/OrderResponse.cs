@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ASPNETHomework.DAL.Domain;
 
-namespace ASPNETHomework.Models.Response.Order
+namespace ASPNETHomework.Models.Response.OrderFolder
 {
 	/// <summary>
 	/// Responds to request for an order
@@ -22,5 +22,6 @@ namespace ASPNETHomework.Models.Response.Order
 		/// Array of products
 		/// </summary>
 		public List<Product> Products { get; set; }
+		
 	}
 }

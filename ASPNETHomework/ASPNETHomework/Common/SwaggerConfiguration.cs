@@ -21,9 +21,14 @@ namespace ASPNETHomework.Common
 				})
 				.AddSwaggerDocument(c =>
 				{
-					c.Title = "Version 1";
-					c.DocumentName = "v1";
-					c.ApiGroupNames = new[] { "v1" };
+					c.Title = "Order";
+					c.DocumentName = SwaggerDocParts.Order;
+					c.ApiGroupNames = new[] { SwaggerDocParts.Order };
+				}).AddSwaggerDocument(c =>
+				{
+					c.Title = "Product";
+					c.DocumentName = SwaggerDocParts.Product;
+					c.ApiGroupNames = new[] { SwaggerDocParts.Product };
 				});
 		}
 	}

@@ -13,5 +13,9 @@
 		/// Constant for swagger document "Customer".
 		/// </summary>
 		public const string Customer = nameof(Customer);
+		/// <summary>
+		/// Constant for swagger document "Product".
+		/// </summary>
+		public const string Product = nameof(Product);
 	}
 }

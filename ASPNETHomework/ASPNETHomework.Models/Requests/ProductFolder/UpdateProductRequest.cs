@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ASPNETHomework.Models.Requests.OrderFolder
+namespace ASPNETHomework.Models.Requests.ProductFolder
 {
-	/// <summary>
-	/// Request for update an order
-	/// </summary>
-	public class UpdateOrderRequest : CreateOrderRequest
+	public class UpdateProductRequest : CreateProductRequest
 	{
 		/// <summary>
 		/// Entity identification.

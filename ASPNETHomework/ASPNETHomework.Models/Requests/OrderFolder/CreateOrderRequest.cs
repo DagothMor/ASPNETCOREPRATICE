@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using ASPNETHomework.DAL.Domain;
 
-namespace ASPNETHomework.Models.Requests.Order
+namespace ASPNETHomework.Models.Requests.OrderFolder
 {
 	/// <summary>
 	/// Request for create an order

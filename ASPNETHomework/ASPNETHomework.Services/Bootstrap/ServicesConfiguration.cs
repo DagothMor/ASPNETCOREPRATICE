@@ -17,6 +17,7 @@ namespace ASPNETHomework.Services.Bootstrap
 		{
 			services.AddTransient<IOrderService, OrderService>();
 			services.AddTransient<ICustomerService, CustomerService>();
+			services.AddTransient<IProductService, ProductService>();
 		}
 	}
 }

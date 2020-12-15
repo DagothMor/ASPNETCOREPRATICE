@@ -23,5 +23,9 @@ namespace ASPNETHomework.Models.DTO
 		/// Price.
 		/// </summary>
 		public double Price { get; set; }
+		/// <summary>
+		/// Provider.
+		/// </summary>
+		public ProviderDto Provider { get; set; }
 	}
 }

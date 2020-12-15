@@ -11,7 +11,7 @@ using ASPNETHomework.Repositories.Interfaces.CRUD;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
-namespace ASPNETHomework.Repositories
+namespace ASPNETHomework.Repositories.Repositories
 {
     /// <summary>
     /// Base class of repository for work with CRUD.

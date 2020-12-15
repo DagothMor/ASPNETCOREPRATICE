@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ASPNETHomework.DAL.Domain;
-using ASPNETHomework.Models.DTO;
-using ASPNETHomework.Models.Requests.Order;
-using ASPNETHomework.Models.Response.Order;
+﻿using ASPNETHomework.Models.DTO;
+using ASPNETHomework.Models.Requests.OrderFolder;
+using ASPNETHomework.Models.Response.OrderFolder;
 using AutoMapper;
 
 namespace ASPNETHomework.Controllers.Mappings

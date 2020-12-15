@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using ASPNETHomework.Common;
 using ASPNETHomework.Models.DTO;
-using ASPNETHomework.Models.Requests.Order;
-using ASPNETHomework.Models.Response.Order;
+using ASPNETHomework.Models.Requests.OrderFolder;
+using ASPNETHomework.Models.Response.OrderFolder;
 using ASPNETHomework.Services.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
