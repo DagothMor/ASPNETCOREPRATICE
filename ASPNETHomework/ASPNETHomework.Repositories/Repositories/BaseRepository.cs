@@ -23,9 +23,8 @@ namespace ASPNETHomework.Repositories.Repositories
         where TModel : BaseEntity
     {
         private readonly IMapper _mapper;
-
-        protected readonly AspNetHomeworkContext _сontext;
-        protected DbSet<TModel> _dbSet => _сontext.Set<TModel>();
+        protected DbSet<TModel> _dbSet => Context.Set<TModel>();
+        public AspNetHomeworkContext Context { get; }
 
         /// <summary>
         /// Initialize an instance <see cref="BaseRepository{TDto, TModel}"/>.
@@ -34,8 +33,8 @@ namespace ASPNETHomework.Repositories.Repositories
         /// <param name="mapper">Mapper.</param>
         protected BaseRepository(AspNetHomeworkContext context, IMapper mapper)
         {
-            _сontext = context;
-            _mapper = mapper;
+	        Context = context;
+	        _mapper = mapper;
         }
 
         /// <inheritdoc cref="ICreatable{TDto, TModel}.CreateAsync(TDto)"/>
@@ -43,7 +42,7 @@ namespace ASPNETHomework.Repositories.Repositories
         {
             var entity = _mapper.Map<TModel>(dto);
             await _dbSet.AddAsync(entity);
-            await _сontext.SaveChangesAsync();
+            await Context.SaveChangesAsync();
             return await GetAsync(entity.Id);
         }
 
@@ -54,8 +53,8 @@ namespace ASPNETHomework.Repositories.Repositories
                                 .Where(x => ids.Contains(x.Id))
                                 .ToListAsync();
 
-            _сontext.RemoveRange(entities);
-            await _сontext.SaveChangesAsync();
+            Context.RemoveRange(entities);
+            await Context.SaveChangesAsync();
         }
 
         /// <inheritdoc cref="IGettableById{TDto, TModel}.GetAsync(int)"/>
@@ -73,8 +72,8 @@ namespace ASPNETHomework.Repositories.Repositories
         public async Task<TDto> UpdateAsync(TDto dto, CancellationToken token = default)
         {
             var entity = _mapper.Map<TModel>(dto);
-            _сontext.Update(entity);
-            await _сontext.SaveChangesAsync(token);
+            Context.Update(entity);
+            await Context.SaveChangesAsync(token);
             var newEntity = await GetAsync(entity.Id);
 
             return _mapper.Map<TDto>(newEntity);

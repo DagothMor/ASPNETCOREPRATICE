@@ -7,7 +7,7 @@ namespace ASPNETHomework.Models.DTO
 	/// <summary>
 	/// Provider.
 	/// </summary>
-	public class ProviderDto
+	public class ProviderDto : BaseDto
 	{
 		/// <summary>
 		/// Name.

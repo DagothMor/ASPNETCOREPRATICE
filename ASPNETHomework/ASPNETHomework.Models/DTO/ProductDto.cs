@@ -27,5 +27,9 @@ namespace ASPNETHomework.Models.DTO
 		/// Provider.
 		/// </summary>
 		public ProviderDto Provider { get; set; }
+		/// <summary>
+		/// Provider id.
+		/// </summary>
+		public int ProviderId { get; set; }
 	}
 }

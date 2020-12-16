@@ -7,7 +7,7 @@ namespace ASPNETHomework.Repositories.Mappings
 	/// <summary>
 	/// Product profile.
 	/// </summary>
-	public class ProductProfile : Profile
+	public class ProductProfile : Profile	
 	{
 		/// <summary>
 		/// Initialize an instance <see cref="ProductProfile"/>

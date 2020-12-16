@@ -29,5 +29,9 @@ namespace ASPNETHomework.Models.Requests.ProductFolder
 		/// Customer's supply.
 		/// </summary>
 		public virtual List<Order> Orders { get; set; }
+		/// <summary>
+		/// Provider id.
+		/// </summary>
+		public long ProviderId { get; set; }
 	}
 }

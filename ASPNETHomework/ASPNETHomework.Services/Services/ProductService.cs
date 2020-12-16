@@ -23,9 +23,21 @@ namespace ASPNETHomework.Services.Services
 		}
 
 		///<inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>
+		/// Test Create
 		public async Task<ProductDto> CreateAsync(ProductDto dto)
 		{
-			return await _repository.CreateAsync(dto);
+			using var scope = await _repository.Context.Database.BeginTransactionAsync();
+			try
+			{
+				var product = await _repository.CreateAsync(dto);
+				scope.Commit();
+				return product;
+			}
+			catch (Exception ex)
+			{
+				scope.Rollback();
+				throw ex;
+			}
 		}
 
 		/// <inheritdoc cref="IDeletable.DeleteAsync(int[])"/>
