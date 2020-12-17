@@ -1,4 +1,5 @@
 ﻿
+using ASPNETHomework.DAL;
 using ASPNETHomework.Repositories.Interfaces;
 using ASPNETHomework.Repositories.Repositories;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,7 @@ namespace ASPNETHomework.Repositories.Bootstrap
 			services.AddTransient<IOrderRepository, OrderRepository>();
 			services.AddTransient<ICustomerRepository,CustomerRepository>();
 			services.AddTransient<IProductRepository, ProductRepository>();
+			services.AddTransient<UnitOfWork,UnitOfWork>();// я как понимаю нужно его создать и через ioc пробрасывать по контроллерам.
 		}
 	}
 }

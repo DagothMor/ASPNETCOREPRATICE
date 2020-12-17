@@ -92,7 +92,7 @@ namespace ASPNETHomework.Repositories.Repositories
         /// <summary>
         /// Added to selection related parameter's.
         /// </summary>
-        /// <param name="dbSet ">DbSet collection of repository.</param>
+        /// <param name="dbSet">DbSet collection of repository.</param>
         protected virtual IQueryable<TModel> DefaultIncludeProperties(DbSet<TModel> dbSet) => dbSet;
     }
 }

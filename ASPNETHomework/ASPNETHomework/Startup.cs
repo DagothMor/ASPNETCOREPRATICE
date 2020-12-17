@@ -34,9 +34,9 @@ namespace ASPNETHomework
 			services.ConfigureServices();
 			services.AddAutoMapper(
 				typeof(OrderRepository).GetTypeInfo().Assembly,
-				typeof(OrderController).GetTypeInfo().Assembly,
-				typeof(CustomerRepository).GetTypeInfo().Assembly,
-				typeof(CustomerController).GetTypeInfo().Assembly);
+				//typeof(OrderController).GetTypeInfo().Assembly,
+				typeof(CustomerRepository).GetTypeInfo().Assembly);
+				//typeof(CustomerController).GetTypeInfo().Assembly);
 			services.ConfigureSwagger();
 		}
 

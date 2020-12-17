@@ -54,11 +54,12 @@ namespace ASPNETHomework.DAL.Contexts
 		public AspNetHomeworkContext(DbContextOptions options) : base(options)
 		{
 		}
+
 		/// <summary>
 		/// Entity creating rules.
 		/// </summary>
 		/// <param name="builder">Model builder.</param>
-		protected override void OnModelCreating(ModelBuilder builder)
+		protected override void OnModelCreating(ModelBuilder builder)//not load?
 		{
 			builder.ApplyConfiguration(new AvailabilityConfig());
 		}

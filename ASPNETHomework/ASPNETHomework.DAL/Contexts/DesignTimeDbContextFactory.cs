@@ -9,7 +9,7 @@ namespace ASPNETHomework.DAL.Contexts
 	/// <summary>
 	/// Factory for creating new context in migration process.
 	/// </summary>
-	internal sealed class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<AspNetHomeworkContext>
+	internal sealed class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<AspNetHomeworkContext> // never called???
 	{
 		/// <summary>
 		/// Creating context for migration.
