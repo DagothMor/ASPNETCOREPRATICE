@@ -18,6 +18,10 @@ namespace ASPNETHomework.Models.Response.CustomerFolder
 		/// </summary>
 		public string FirstName { get; set; }
 		/// <summary>
+		/// Customer's last name.
+		/// </summary>
+		public string LastName { get; set; }
+		/// <summary>
 		/// Customer's money.
 		/// </summary>
 		public float Money { get; set; }

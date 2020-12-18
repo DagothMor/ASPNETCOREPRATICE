@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using ASPNETHomework.Common;
-using ASPNETHomework.DAL;
 using ASPNETHomework.Models.DTO;
 using ASPNETHomework.Models.Requests.ProductFolder;
 using ASPNETHomework.Models.Response.ProductFolder;
@@ -27,21 +26,18 @@ namespace ASPNETHomework.Controllers
 		private readonly ILogger<ProductController> _logger;
 		private readonly IProductService _productService;
 		private readonly IMapper _mapper;
-		private readonly UnitOfWork _unitOfWork;
 
 		/// <summary>
 		/// Initialize an instance <see cref="ProductController"/>
 		/// </summary>
-		/// <param name="productService">Product Service.</param>
+		/// <param name="ProductService">Product Service.</param>
 		/// <param name="logger">Logger.</param>
 		/// <param name="mapper">Mapper.</param>
-		/// <param name="unitOfWork">UoW</param>
-		public ProductController(IProductService productService, ILogger<ProductController> logger, IMapper mapper,UnitOfWork unitOfWork)
+		public ProductController(IProductService productService, ILogger<ProductController> logger, IMapper mapper)
 		{
 			_productService = productService;
 			_logger = logger;
 			_mapper = mapper;
-			_unitOfWork = unitOfWork;
 		}
 
 		/// <summary>
@@ -53,8 +49,7 @@ namespace ASPNETHomework.Controllers
 		public async Task<IActionResult> GetAsync(CancellationToken cancellationToken)
 		{
 			_logger.LogInformation("Product/Get was requested.");
-			var response = await _unitOfWork.Products.GetAsync(cancellationToken);
-			//var kek = unitOfWork.ProductRepository.Get(includeProperties:"Aviabilities");
+			var response = await _productService.GetAsync(cancellationToken);
 			return Ok(_mapper.Map<IEnumerable<ProductResponse>>(response));
 		}
 
@@ -67,7 +62,7 @@ namespace ASPNETHomework.Controllers
 		public async Task<IActionResult> GetByIdAsync(int id, CancellationToken cancellationToken)
 		{
 			_logger.LogInformation("Product/GetById was requested.");
-			var response = await _unitOfWork.Products.GetAsync(id);
+			var response = await _productService.GetAsync(id, cancellationToken);
 			return Ok(_mapper.Map<ProductResponse>(response));
 		}
 
@@ -80,7 +75,7 @@ namespace ASPNETHomework.Controllers
 		public async Task<IActionResult> PostAsync(CreateProductRequest request, CancellationToken cancellationToken)
 		{
 			_logger.LogInformation("Product/Post was requested.");
-			var response = await _unitOfWork.Products.CreateAsync(_mapper.Map<ProductDto>(request));
+			var response = await _productService.CreateAsync(_mapper.Map<ProductDto>(request));
 			return Ok(_mapper.Map<ProductResponse>(response));
 		}
 
@@ -93,7 +88,7 @@ namespace ASPNETHomework.Controllers
 		public async Task<IActionResult> PutAsync(UpdateProductRequest request, CancellationToken cancellationToken)
 		{
 			_logger.LogInformation("Product/Put was requested.");
-			var response = await _unitOfWork.Products.UpdateAsync(_mapper.Map<ProductDto>(request));
+			var response = await _productService.UpdateAsync(_mapper.Map<ProductDto>(request));
 			return Ok(_mapper.Map<ProductResponse>(response));
 		}
 
@@ -105,9 +100,8 @@ namespace ASPNETHomework.Controllers
 		public async Task<IActionResult> DeleteAsync(CancellationToken cancellationToken, params int[] ids)
 		{
 			_logger.LogInformation("Product/Delete was requested.");
-			await _unitOfWork.Products.DeleteAsync(ids);
+			await _productService.DeleteAsync(ids);
 			return NoContent();
 		}
 	}
 }
-/// Выдает ошибку с маппером кажется я его гдето лишним добавил
