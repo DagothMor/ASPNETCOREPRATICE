@@ -25,7 +25,6 @@ namespace ASPNETHomework.DAL
 		{
 			Context = context;
 			Mapper = mapper;
-			//мне через ioс получается нужно вытаскивать?
 		}
 
 		public CustomerRepository Customers

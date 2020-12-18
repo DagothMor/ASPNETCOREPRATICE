@@ -8,27 +8,20 @@ namespace ASPNETHomework.Models.Response.ProductFolder
 {
 	public class ProductResponse
 	{
-		/// <summary>
-		/// Category of product.
-		/// </summary>
-		public Category Category { get; set; }
 
 		/// <summary>
 		/// Name of product.
 		/// </summary>
-		[StringLength(25)]
 		public string Name { get; set; }
 
 		/// <summary>
 		/// Description.
 		/// </summary>
-		[StringLength(3000)]
 		public string Description { get; set; }
 
 		/// <summary>
 		/// Price.
 		/// </summary>
-		[Required]
 		public double Price { get; set; }
 		
 		/// <summary>

@@ -38,12 +38,10 @@ namespace ASPNETHomework.DAL.Domain
 		/// Provider.
 		/// </summary>
 		public Provider Provider { get; set; }
-
-		//todo:возможно придется удалить ибо в бд какаято ересь 
 		/// <summary>
 		/// Provider's identification.
 		/// </summary>
-		public long ProviderId { get; set; }//бд создало аномалию мб удалить?
+		public int ProviderId { get; set; }//бд создало аномалию мб удалить?
 
 		/// <summary>
 		/// Many to many with order.

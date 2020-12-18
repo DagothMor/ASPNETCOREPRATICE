@@ -17,7 +17,7 @@ namespace ASPNETHomework.Repositories.Mappings
 		/// </summary>
 		public ProviderProfile()
 		{
-			CreateMap<Provider, ProviderDto>().ReverseMap();
+			CreateMap<Provider,ProviderDto>().ReverseMap();
 		}
 	}
 }
