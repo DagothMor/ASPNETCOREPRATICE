@@ -17,9 +17,10 @@ namespace ASPNETHomework.DAL.Bootstrap
 			this IServiceCollection services,
 					IConfiguration configuration)
 		{
+			var connectionString = configuration["Movies:ConnectionString"];
 			services.AddDbContext<AspNetHomeworkContext>(
 				options => options.UseNpgsql(
-				configuration.GetConnectionString(nameof(AspNetHomeworkContext)),
+				connectionString,
 				builder => builder.MigrationsAssembly(typeof(AspNetHomeworkContext).Assembly.FullName)
 				));
 		}

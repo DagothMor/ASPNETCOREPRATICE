@@ -18,6 +18,7 @@ namespace ASPNETHomework
 {
 	public class Startup
 	{
+		private string _moviesApiKey = null;
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
@@ -28,16 +29,18 @@ namespace ASPNETHomework
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			_moviesApiKey = Configuration["Movies:ServiceApiKey"];
+
 			services.ConfigureDb(Configuration);
 			services.ConfigureRepositories();
 			services.AddControllers();
 			services.ConfigureServices();
 			services.AddAutoMapper(
-				typeof(OrderRepository).GetTypeInfo().Assembly,
 				typeof(OrderController).GetTypeInfo().Assembly,
-				typeof(CustomerRepository).GetTypeInfo().Assembly,
-				typeof(ProductRepository).GetTypeInfo().Assembly,
-				typeof(ProductController).GetTypeInfo().Assembly);
+				typeof(ProductController).GetTypeInfo().Assembly,
+				typeof(CustomerController).GetTypeInfo().Assembly,
+				typeof(ProductRepository).GetTypeInfo().Assembly)
+				;
 			services.ConfigureSwagger();
 		}
 
