@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using ASPNETHomework.Common;
 using ASPNETHomework.Controllers;
@@ -35,12 +36,7 @@ namespace ASPNETHomework
 			services.ConfigureRepositories();
 			services.AddControllers();
 			services.ConfigureServices();
-			services.AddAutoMapper(
-				typeof(OrderController).GetTypeInfo().Assembly,
-				typeof(ProductController).GetTypeInfo().Assembly,
-				typeof(CustomerController).GetTypeInfo().Assembly,
-				typeof(ProductRepository).GetTypeInfo().Assembly)
-				;
+			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 			services.ConfigureSwagger();
 		}
 

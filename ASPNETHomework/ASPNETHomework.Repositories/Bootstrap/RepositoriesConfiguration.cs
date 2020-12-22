@@ -17,9 +17,6 @@ namespace ASPNETHomework.Repositories.Bootstrap
 		/// <param name="services">service collection from startup</param>
 		public static void ConfigureRepositories(this IServiceCollection services)
 		{
-			services.AddTransient<IOrderRepository, OrderRepository>();
-			services.AddTransient<ICustomerRepository,CustomerRepository>();
-			services.AddTransient<IProductRepository, ProductRepository>();
 			services.AddTransient<UnitOfWork,UnitOfWork>();
 		}
 	}

@@ -32,6 +32,6 @@ namespace ASPNETHomework.Models.Requests.ProductFolder
 		/// <summary>
 		/// Provider id.
 		/// </summary>
-		public long ProviderId { get; set; }
+		public int ProviderId { get; set; }
 	}
 }
