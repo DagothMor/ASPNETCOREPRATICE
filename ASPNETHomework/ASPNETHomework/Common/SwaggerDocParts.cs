@@ -6,12 +6,16 @@
 	public sealed class SwaggerDocParts
 	{
 		/// <summary>
-		/// Constant for swagger document "Notebooks".
+		/// Constant for swagger document "Order".
 		/// </summary>
-		public const string Notebooks = nameof(Notebooks);
+		public const string Order = nameof(Order);
 		/// <summary>
-		/// Constant for swagger document "Test".
+		/// Constant for swagger document "Customer".
 		/// </summary>
-		public const string Test = nameof(Test);
+		public const string Customer = nameof(Customer);
+		/// <summary>
+		/// Constant for swagger document "Product".
+		/// </summary>
+		public const string Product = nameof(Product);
 	}
 }

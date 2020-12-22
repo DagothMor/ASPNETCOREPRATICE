@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using ASPNETHomework.DAL.Contexts;
 
 namespace ASPNETHomework.Repositories.Interfaces.CRUD
 {
@@ -16,5 +15,6 @@ namespace ASPNETHomework.Repositories.Interfaces.CRUD
 		IUpdatable<TDto, TModel>,
 		IDeletable
 	{
+		AspNetHomeworkContext Context { get; }
 	}
 }

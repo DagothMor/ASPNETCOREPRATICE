@@ -8,10 +8,6 @@ namespace ASPNETHomework.Models.DTO
 	public class ProductDto : BaseDto
 	{
 		/// <summary>
-		/// Category of product.
-		/// </summary>
-		public Category Category { get; set; }
-		/// <summary>
 		/// Name of product.
 		/// </summary>
 		public string Name { get; set; }
@@ -23,5 +19,9 @@ namespace ASPNETHomework.Models.DTO
 		/// Price.
 		/// </summary>
 		public double Price { get; set; }
+		/// <summary>
+		/// Provider.
+		/// </summary>
+		public ProviderDto Provider { get; set; }
 	}
 }

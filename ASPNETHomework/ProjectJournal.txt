@@ -1,0 +1,3 @@
+Uow wont work what i thnk what need to do:
+1)Simplyfie domain models
+2)

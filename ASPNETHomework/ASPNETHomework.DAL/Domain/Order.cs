@@ -11,23 +11,15 @@ namespace ASPNETHomework.DAL.Domain
 	/// </summary>
 	public class Order : BaseEntity
 	{
-		/// <summary>
-		/// Customer.
-		/// </summary>
 		public Customer Customer { get; set; }
 		/// <summary>
 		/// Date of order.
 		/// </summary>
 		[Required]
-		public DateTime Date { get; set; }
-		/// <summary>
-		/// Time of order.
-		/// </summary>
-		[Required]
-		public DateTime Time { get; set; }
+		public DateTime DateTimeOffset { get; set; }
 		/// <summary>
 		/// Products
 		/// </summary>
-		public List<Product> Products { get; set; }
+		public ICollection<Product> Products { get; set; }// efc tutor say that's correct instead of list.
 	}
 }

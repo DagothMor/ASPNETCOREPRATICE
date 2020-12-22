@@ -8,7 +8,7 @@ namespace ASPNETHomework.Models.DTO
 	/// <summary>
 	/// Customer Dto.
 	/// </summary>
-	class CustomerDto : BaseDto
+	public class CustomerDto : BaseDto
 	{
 		/// <summary>
 		/// Customer's first name.
@@ -18,5 +18,14 @@ namespace ASPNETHomework.Models.DTO
 		/// Customer's last name.
 		/// </summary>
 		public string LastName { get; set; }
+		/// <summary>
+		/// Customer's money
+		/// </summary>
+		public float Money { get; set; }
+
+		/// <summary>
+		/// Customer's City
+		/// </summary>
+		public string City { get; set; }
 	}
 }

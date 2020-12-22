@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ASPNETHomework.DAL.Domain;
+using ASPNETHomework.DAL.Fluent;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASPNETHomework.DAL.Contexts
@@ -17,11 +18,6 @@ namespace ASPNETHomework.DAL.Contexts
 		public DbSet<Order> Orders { get; set; }
 
 		/// <summary>
-		/// Categories.
-		/// </summary>
-		public DbSet<Category> Categories { get; set; }
-
-		/// <summary>
 		/// Customers.
 		/// </summary>
 		public DbSet<Customer> Customers { get; set; }
@@ -32,17 +28,40 @@ namespace ASPNETHomework.DAL.Contexts
 		public DbSet<Product> Products { get; set; }
 
 		/// <summary>
+		/// Categories.
+		/// </summary>
+		public DbSet<Category> Categories { get; set; }
+
+		/// <summary>
+		/// Availabilities.
+		/// </summary>
+		public DbSet<Availability> Availabilities { get; set; }
+
+		/// <summary>
+		/// Shops.
+		/// </summary>
+		public DbSet<Shop> Shops { get; set; }
+
+		/// <summary>
+		/// Providers.
+		/// </summary>
+		public DbSet<Provider> Providers { get; set; }
+
+		/// <summary>
 		/// Initialize an instance <see cref="AspNetHomeworkContext"/>
 		/// </summary>
 		/// <param name="options">options for context configuration</param>
 		public AspNetHomeworkContext(DbContextOptions options) : base(options)
 		{
-			///удаляет бд потом заного создает потому на будущее не заполняй
-			/// бд кучей данных
-			/// ревертнул по невнимательности
-			Database.EnsureDeleted();
-			Database.EnsureCreated();
 		}
 
+		/// <summary>
+		/// Entity creating rules.
+		/// </summary>
+		/// <param name="builder">Model builder.</param>
+		protected override void OnModelCreating(ModelBuilder builder)//not load?
+		{
+			builder.ApplyConfiguration(new AvailabilityConfig());
+		}
 	}
 }

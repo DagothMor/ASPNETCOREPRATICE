@@ -17,11 +17,7 @@ namespace ASPNETHomework.Models.DTO
 		/// <summary>
 		/// Date of order.
 		/// </summary>
-		public DateTime Date { get; set; }
-		/// <summary>
-		/// Time of order.
-		/// </summary>
-		public DateTime Time { get; set; }
+		public DateTime DateTimeOffset { get; set; }
 		/// <summary>
 		/// Array of products
 		/// </summary>

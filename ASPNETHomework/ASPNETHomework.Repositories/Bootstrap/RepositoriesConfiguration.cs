@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using ASPNETHomework.DAL;
 using ASPNETHomework.Repositories.Interfaces;
+using ASPNETHomework.Repositories.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ASPNETHomework.Repositories.Bootstrap
@@ -17,7 +17,10 @@ namespace ASPNETHomework.Repositories.Bootstrap
 		/// <param name="services">service collection from startup</param>
 		public static void ConfigureRepositories(this IServiceCollection services)
 		{
-			services.AddTransient<ITestRepository, TestRepository>();
+			services.AddTransient<IOrderRepository, OrderRepository>();
+			services.AddTransient<ICustomerRepository,CustomerRepository>();
+			services.AddTransient<IProductRepository, ProductRepository>();
+			services.AddTransient<UnitOfWork,UnitOfWork>();
 		}
 	}
 }

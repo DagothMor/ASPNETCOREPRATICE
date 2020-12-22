@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
@@ -20,6 +21,13 @@ namespace ASPNETHomework
 					logging.AddDebug();
 					logging.AddNLog();
 				})
+			.ConfigureAppConfiguration((hostingsContext, builder) =>
+			{
+				if (hostingsContext.HostingEnvironment.IsDevelopment())
+				{
+					builder.AddUserSecrets<Program>();
+				}
+			})
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
 					webBuilder.UseStartup<Startup>();

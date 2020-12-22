@@ -5,15 +5,13 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework", "ASPNETHomework\ASPNETHomework.csproj", "{4E230B1D-DBF2-43C9-B5C9-862DD62F9B32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETCOREHomework.Database", "ASPNETCOREHomework\ASPNETCOREHomework.Database.csproj", "{9476607B-648F-46E3-B171-9784332A0C52}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework.Models", "ASPNETHomework.Models\ASPNETHomework.Models.csproj", "{FE4E9C9A-53EC-458B-9A5F-EB7A46E4304A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework.Services", "ASPNETHomework.Services\ASPNETHomework.Services.csproj", "{EA4ED6C5-64F8-46FD-A870-2044AF8DF361}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework.DAL", "ASPNETHomework.DAL\ASPNETHomework.DAL.csproj", "{62DE0828-13DC-4F58-ACE5-F78CBB62767D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNETHomework.Repositories", "ASPNETHomework.Repositories\ASPNETHomework.Repositories.csproj", "{1F9A5335-6980-4291-ACCC-FC2D8A21A7F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNETHomework.Repositories", "ASPNETHomework.Repositories\ASPNETHomework.Repositories.csproj", "{1F9A5335-6980-4291-ACCC-FC2D8A21A7F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{4E230B1D-DBF2-43C9-B5C9-862DD62F9B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E230B1D-DBF2-43C9-B5C9-862DD62F9B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E230B1D-DBF2-43C9-B5C9-862DD62F9B32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9476607B-648F-46E3-B171-9784332A0C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9476607B-648F-46E3-B171-9784332A0C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9476607B-648F-46E3-B171-9784332A0C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9476607B-648F-46E3-B171-9784332A0C52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE4E9C9A-53EC-458B-9A5F-EB7A46E4304A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE4E9C9A-53EC-458B-9A5F-EB7A46E4304A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE4E9C9A-53EC-458B-9A5F-EB7A46E4304A}.Release|Any CPU.ActiveCfg = Release|Any CPU

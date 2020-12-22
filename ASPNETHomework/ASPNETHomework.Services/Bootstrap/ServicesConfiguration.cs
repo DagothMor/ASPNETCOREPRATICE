@@ -15,7 +15,9 @@ namespace ASPNETHomework.Services.Bootstrap
 		/// <param name="services">A collection of services from Startup.</param>
 		public static void ConfigureServices(this IServiceCollection services)
 		{
-			services.AddTransient<ITestService, TestService>();
+			services.AddTransient<IOrderService, OrderService>();
+			services.AddTransient<ICustomerService, CustomerService>();
+			services.AddTransient<IProductService, ProductService>();
 		}
 	}
 }
