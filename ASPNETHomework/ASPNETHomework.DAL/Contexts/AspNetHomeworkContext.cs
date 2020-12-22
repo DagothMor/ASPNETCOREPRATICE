@@ -48,6 +48,21 @@ namespace ASPNETHomework.DAL.Contexts
 		public DbSet<Provider> Providers { get; set; }
 
 		/// <summary>
+		/// Users.
+		/// </summary>
+		public DbSet<User> Users { get; set; }
+
+		/// <summary>
+		/// Roles.
+		/// </summary>
+		public DbSet<Role> Roles { get; set; }
+
+		/// <summary>
+		/// User roles.
+		/// </summary>
+		public DbSet<UserRoles> UserRoles { get; set; }
+
+		/// <summary>
 		/// Initialize an instance <see cref="AspNetHomeworkContext"/>
 		/// </summary>
 		/// <param name="options">options for context configuration</param>
