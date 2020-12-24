@@ -66,7 +66,6 @@ namespace ASPNETHomework
 			services.AddHostedService<JwtRefreshTokenCache>();
 			services.ConfigureServices();
 			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-			services.ConfigureSwagger();
 			services.AddSwaggerGen(c =>
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "JWT Auth Demo", Version = "v1" });

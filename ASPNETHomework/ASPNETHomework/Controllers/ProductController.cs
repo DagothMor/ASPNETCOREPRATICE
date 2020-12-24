@@ -30,7 +30,7 @@ namespace ASPNETHomework.Controllers
 		/// <summary>
 		/// Initialize an instance <see cref="ProductController"/>
 		/// </summary>
-		/// <param name="ProductService">Product Service.</param>
+		/// <param name="productService">Product Service.</param>
 		/// <param name="logger">Logger.</param>
 		/// <param name="mapper">Mapper.</param>
 		public ProductController(IProductService productService, ILogger<ProductController> logger, IMapper mapper)
