@@ -29,6 +29,11 @@ namespace ASPNETHomework.Common
 					c.Title = "Product";
 					c.DocumentName = SwaggerDocParts.Product;
 					c.ApiGroupNames = new[] { SwaggerDocParts.Product };
+				}).AddSwaggerDocument(c =>
+				{
+					c.Title = "Account";
+					c.DocumentName = SwaggerDocParts.Account;
+					c.ApiGroupNames = new[] { SwaggerDocParts.Account };
 				});
 		}
 	}

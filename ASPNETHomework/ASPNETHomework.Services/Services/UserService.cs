@@ -26,7 +26,7 @@ namespace ASPNETHomework.Services.Services
             _aspNetHomeworkContext = context;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc Проверка на пустоту пробелы и в конце наличие в базе данных/>
         public bool IsValidUserCredentials(string userName, string password)
         {
             _logger.LogInformation($"Validating user [{userName}]");

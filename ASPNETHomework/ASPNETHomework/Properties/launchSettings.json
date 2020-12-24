@@ -18,7 +18,6 @@
       }
     },
     "ASPNETHomework": {
-      "secret": "1234567890123456789",
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger/index.html",
