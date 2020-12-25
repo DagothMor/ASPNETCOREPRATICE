@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ASPNETHomework.Models.DTO;
+using ASPNETHomework.Services.Interfaces.CRUD;
 
 namespace ASPNETHomework.Services.Interfaces
 {
     /// <summary>
     /// Interface for service user.
     /// </summary>
-    public interface IUserService
+    public interface IUserService : ICrudRepository<UserDto>
     {
         /// <summary>
         /// Check user.

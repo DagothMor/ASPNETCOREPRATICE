@@ -4,6 +4,12 @@ using Microsoft.Extensions.Logging;
 using System.Linq;
 using System;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using ASPNETHomework.Models.DTO;
+using System.Threading;
+using System.Collections.Generic;
+using ASPNETHomework.DAL;
+using ASPNETHomework.DAL.Domain;
 
 namespace ASPNETHomework.Services.Services
 {
@@ -13,17 +19,17 @@ namespace ASPNETHomework.Services.Services
     public class UserService : IUserService
     {
         private readonly ILogger<UserService> _logger;
-        private readonly AspNetHomeworkContext _aspNetHomeworkContext;
+        private readonly UnitOfWork _unitOfWork;
 
         /// <summary>
         /// Initialize <see cref="UserService"/>
         /// </summary>
         /// <param name="logger">Logger.</param>
         /// <param name="context">DB Context.</param>
-        public UserService(ILogger<UserService> logger, AspNetHomeworkContext context)
+        public UserService(ILogger<UserService> logger, UnitOfWork unitOfWork)
         {
             _logger = logger;
-            _aspNetHomeworkContext = context;
+            _unitOfWork = unitOfWork;
         }
 
         /// <inheritdoc Проверка на пустоту пробелы и в конце наличие в базе данных/>
@@ -40,13 +46,13 @@ namespace ASPNETHomework.Services.Services
                 return false;
             }
 
-            return _aspNetHomeworkContext.Users.Any(x => x.Login == userName && x.Password == password);
+            return _unitOfWork.Users.Context.Users.Any(x => x.Login == userName && x.Password == password);// is it work?
         }
 
         /// <inheritdoc />
         public bool IsAnExistingUser(string userName)
         {
-            return _aspNetHomeworkContext.Users.Any(x => x.Login == userName);
+            return _unitOfWork.Users.Context.Users.Any(x => x.Login == userName);
         }
 
         /// <inheritdoc />
@@ -57,7 +63,7 @@ namespace ASPNETHomework.Services.Services
                 return string.Empty;
             }
 
-            var role = _aspNetHomeworkContext.UserRoles
+            var role = _unitOfWork.Users.Context.UserRoles
                 .Include(x => x.User)
                 .Include(x => x.Role)
                 .SingleOrDefault(x => x.User.Login == userName).Role?.Name;
@@ -67,5 +73,35 @@ namespace ASPNETHomework.Services.Services
 
             return role;
         }
-    }
+
+		public Task<UserDto> CreateAsync(UserDto dto)
+		{
+            if(_unitOfWork.Users.Context.Users.Any(x => x.Login == dto.Login))
+			{
+                throw new ArgumentException("User is already exists");
+            }
+            return  _unitOfWork.Users.CreateAsync(dto);
+
+        }
+
+		public Task<UserDto> GetAsync(int id, CancellationToken token = default)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Task<IEnumerable<UserDto>> GetAsync(CancellationToken token = default)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Task<UserDto> UpdateAsync(UserDto dto)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Task DeleteAsync(params int[] ids)
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

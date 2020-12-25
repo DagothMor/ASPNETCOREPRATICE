@@ -37,7 +37,7 @@ namespace ASPNETHomework.Repositories.Repositories
 	        _mapper = mapper;
         }
 
-        /// <inheritdoc cref="ICreatable{TDto, TModel}.CreateAsync(TDto)"/>
+        /// <inheritdoc cref="ICreatable{TDto}.CreateAsync(TDto)"/>
         public async Task<TDto> CreateAsync(TDto dto)
         {
             var entity = _mapper.Map<TModel>(dto);
@@ -46,7 +46,7 @@ namespace ASPNETHomework.Repositories.Repositories
             return await GetAsync(entity.Id);
         }
 
-        /// <inheritdoc cref="IDeletable{TDto, TModel}.DeleteAsync(int[])"/>
+        /// <inheritdoc cref="IDeletable{TDto}.DeleteAsync(int[])"/>
         public async Task DeleteAsync(params int[] ids)
         {
             var entities = await _dbSet

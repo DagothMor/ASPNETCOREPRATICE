@@ -15,6 +15,7 @@ namespace ASPNETHomework.DAL
 		private CustomerRepository _customerRepository;
 		private OrderRepository _orderRepository;
 		private ProductRepository _productRepository;
+		private UserRepository _userRepository;
 		/// <summary>
 		/// UoW constructor.
 		/// </summary>
@@ -32,7 +33,7 @@ namespace ASPNETHomework.DAL
 			get
 			{
 				if (_customerRepository == null)
-					_customerRepository = new CustomerRepository(Context,Mapper);// и их же юзать при создании реп?
+					_customerRepository = new CustomerRepository(Context,Mapper);
 				return _customerRepository;
 			}
 		}
@@ -54,6 +55,15 @@ namespace ASPNETHomework.DAL
 				if (_productRepository == null)
 					_productRepository = new ProductRepository(Context, Mapper);
 				return _productRepository;
+			}
+		}
+		public UserRepository Users
+		{
+			get
+			{
+				if (_userRepository == null)
+					_userRepository = new UserRepository(Context, Mapper);
+				return _userRepository;
 			}
 		}
 

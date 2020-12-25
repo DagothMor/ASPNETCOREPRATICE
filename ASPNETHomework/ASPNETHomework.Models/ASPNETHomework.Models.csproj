@@ -26,8 +26,4 @@
     <ProjectReference Include="..\ASPNETHomework.DAL\ASPNETHomework.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Requests\UserFolder\" />
-  </ItemGroup>
-
 </Project>

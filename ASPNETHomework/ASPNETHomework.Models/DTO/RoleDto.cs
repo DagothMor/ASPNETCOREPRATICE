@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ASPNETHomework.DAL.Domain
+namespace ASPNETHomework.Models.DTO
 {
-	/// <summary>
-	/// Role.
-	/// </summary>
-	public class Role : BaseEntity
+	public class RoleDto : BaseDto
 	{
 		/// <summary>
 		/// Name.

@@ -66,6 +66,7 @@ namespace ASPNETHomework
 			services.AddHostedService<JwtRefreshTokenCache>();
 			services.ConfigureServices();
 			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+			services.ConfigureSwagger();
 			services.AddSwaggerGen(c =>
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "JWT Auth Demo", Version = "v1" });
@@ -89,7 +90,7 @@ namespace ASPNETHomework
 				{
 					{securityScheme, new string[] { }}
 				});
-			}); 
+			}); //Todo: заменить на NSwag
 			services.AddCors(options =>
 			{
 				options.AddPolicy("AllowJwtDemo",
@@ -117,6 +118,7 @@ namespace ASPNETHomework
 
 			app.UseHttpsRedirection();
 
+			
 			app.UseSwaggerUI(c =>
 			{
 				c.SwaggerEndpoint("./swagger/v1/swagger.json", "JWT Auth Demo V1");
@@ -124,13 +126,6 @@ namespace ASPNETHomework
 				c.RoutePrefix = string.Empty;
 			});
 
-			
-
-			
-
-			
-
-			
 			app.UseOpenApi();
 			app.UseSwaggerUi3();
 			app.UseRouting();

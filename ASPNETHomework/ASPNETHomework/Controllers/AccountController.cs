@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using ASPNETHomework.Common;
 using ASPNETHomework.Infrastructure.Interfaces;
+using ASPNETHomework.Models.DTO;
 using ASPNETHomework.Models.Requests.LoginFolder;
 using ASPNETHomework.Models.Requests.TokenFolder;
+using ASPNETHomework.Models.Requests.UserFolder;
 using ASPNETHomework.Models.Response.LoginFolder;
+using ASPNETHomework.Models.Response.UserFolder;
 using ASPNETHomework.Services.Interfaces;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -27,6 +33,7 @@ namespace ASPNETHomework.Controllers
         private readonly ILogger<AccountController> _logger;
         private readonly IUserService _userService;
         private readonly IJwtAuthManager _jwtAuthManager;
+        private readonly IMapper _mapper;
 
         /// <summary>
         /// Initialize object of <see cref="AccountController"/>
@@ -34,11 +41,27 @@ namespace ASPNETHomework.Controllers
         /// <param name="logger">Logger.</param>
         /// <param name="userService">Service.</param>
         /// <param name="jwtAuthManager">Auth manager.</param>
-        public AccountController(ILogger<AccountController> logger, IUserService userService, IJwtAuthManager jwtAuthManager)
+        public AccountController(ILogger<AccountController> logger, IUserService userService, IJwtAuthManager jwtAuthManager,IMapper mapper)
         {
             _logger = logger;
             _userService = userService;
             _jwtAuthManager = jwtAuthManager;
+            _mapper = mapper;
+        }
+
+
+        /// <summary>
+		/// Add entity User.
+		/// </summary>
+		/// <returns>Entity Customer.</returns>
+		[HttpPost("Registration")]
+        [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserResponse))]
+        public async Task<IActionResult> PostAsync(CreateUserRequest request, CancellationToken cancellationToken)
+        {
+            _logger.LogInformation("Customer/Post was requested.");
+            var response = await _userService.CreateAsync(_mapper.Map<UserDto>(request));
+            return Ok(_mapper.Map<UserResponse>(response));
         }
 
         /// <summary>
