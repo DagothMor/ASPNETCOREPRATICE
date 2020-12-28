@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ASPNETHomework.DAL.Domain;
+﻿using ASPNETHomework.DAL.Domain;
 using ASPNETHomework.DAL.Fluent;
 using Microsoft.EntityFrameworkCore;
 

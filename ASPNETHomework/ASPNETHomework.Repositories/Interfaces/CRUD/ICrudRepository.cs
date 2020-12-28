@@ -1,5 +1,4 @@
-﻿
-using ASPNETHomework.DAL.Contexts;
+﻿using ASPNETHomework.DAL.Contexts;
 
 namespace ASPNETHomework.Repositories.Interfaces.CRUD
 {
