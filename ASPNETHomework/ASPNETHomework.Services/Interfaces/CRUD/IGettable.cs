@@ -16,5 +16,5 @@ namespace ASPNETHomework.Services.Interfaces.CRUD
 		/// <param name="token">Instance <see cref="CancellationToken"/>.</param>
 		/// <returns></returns>
 		Task<IEnumerable<TDto>> GetAsync(CancellationToken token = default);
-	}	
+	}
 }

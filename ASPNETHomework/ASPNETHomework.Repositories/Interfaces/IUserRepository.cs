@@ -4,7 +4,10 @@ using ASPNETHomework.Repositories.Interfaces.CRUD;
 
 namespace ASPNETHomework.Repositories.Interfaces
 {
-	interface IUserRepository: ICrudRepository<UserDto, User>
+	/// <summary>
+	/// User repository,implemented all CRUD operations.
+	/// </summary>
+	interface IUserRepository : ICrudRepository<UserDto, User>
 	{
 	}
 }

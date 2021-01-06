@@ -5,9 +5,10 @@ using ASPNETHomework.Repositories.Interfaces;
 using AutoMapper;
 
 namespace ASPNETHomework.Repositories.Repositories
-{/// <summary>
- /// Repository for work with entity "User".
- /// </summary>
+{
+	/// <summary>
+	/// Repository for work with entity "User".
+	/// </summary>
 	public class UserRepository : BaseRepository<UserDto, User>, IUserRepository
 	{
 		/// <summary>

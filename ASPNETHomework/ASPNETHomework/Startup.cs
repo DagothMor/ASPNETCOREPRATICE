@@ -60,7 +60,7 @@ namespace ASPNETHomework
 					ValidateLifetime = true,
 					ClockSkew = TimeSpan.FromMinutes(1)
 				};
-			}); 
+			});
 
 			services.AddSingleton<IJwtAuthManager, JwtAuthManager>();
 			services.AddHostedService<JwtRefreshTokenCache>();
@@ -118,7 +118,7 @@ namespace ASPNETHomework
 
 			app.UseHttpsRedirection();
 
-			
+
 			app.UseSwaggerUI(c =>
 			{
 				c.SwaggerEndpoint("./swagger/v1/swagger.json", "JWT Auth Demo V1");
