@@ -3,15 +3,17 @@ using System;
 using ASPNETHomework.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ASPNETHomework.DAL.Migrations
 {
     [DbContext(typeof(AspNetHomeworkContext))]
-    partial class AspNetHomeworkContextModelSnapshot : ModelSnapshot
+    [Migration("20201222181213_auth")]
+    partial class auth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

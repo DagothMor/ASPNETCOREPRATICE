@@ -7,6 +7,9 @@ using ASPNETHomework.Repositories.Interfaces.CRUD;
 
 namespace ASPNETHomework.Repositories.Interfaces
 {
+	/// <summary>
+	/// Product repository,implemented all CRUD operations.
+	/// </summary>
 	public interface IProductRepository : ICrudRepository<ProductDto,Product>
 	{
 	}

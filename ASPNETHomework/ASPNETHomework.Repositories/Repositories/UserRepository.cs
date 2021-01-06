@@ -7,16 +7,16 @@ using AutoMapper;
 namespace ASPNETHomework.Repositories.Repositories
 {
 	/// <summary>
-	/// Repository for work with entity "Customer".
+	/// Repository for work with entity "User".
 	/// </summary>
-	public class CustomerRepository : BaseRepository<CustomerDto, Customer>, ICustomerRepository
+	public class UserRepository : BaseRepository<UserDto, User>, IUserRepository
 	{
 		/// <summary>
-		/// initialize an instance <see cref="CustomerRepository"/>.
+		/// initialize an instance <see cref="UserRepository"/>.
 		/// </summary>
 		/// <param name="context">Data context.</param>
 		/// <param name="mapper">Mapper.</param>
-		public CustomerRepository(AspNetHomeworkContext context, IMapper mapper) : base(context, mapper)
+		public UserRepository(AspNetHomeworkContext context, IMapper mapper) : base(context, mapper)
 		{
 		}
 	}

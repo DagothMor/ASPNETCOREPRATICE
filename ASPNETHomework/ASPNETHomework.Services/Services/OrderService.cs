@@ -34,7 +34,7 @@ namespace ASPNETHomework.Services.Services
 			using var scope = await _unitOfWork.Orders.Context.Database.BeginTransactionAsync();
 			try
 			{
-				if (dto.Products.Sum(x=>x.Price)>dto.Customer.Money)
+				if (dto.Products.Sum(x => x.Price) > dto.Customer.Money)
 				{
 					throw new Exception("Not enough money");
 				}

@@ -7,6 +7,9 @@ using ASPNETHomework.Models.DTO;
 
 namespace ASPNETHomework.Repositories.Interfaces
 {
+	/// <summary>
+	/// Customer repository,implemented all CRUD operations.
+	/// </summary>
 	public interface ICustomerRepository : ICrudRepository<CustomerDto, Customer>
 	{
 

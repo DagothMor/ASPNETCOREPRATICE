@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ASPNETHomework.DAL.Domain;
+﻿using ASPNETHomework.DAL.Domain;
 using ASPNETHomework.DAL.Fluent;
 using Microsoft.EntityFrameworkCore;
 
@@ -46,6 +43,21 @@ namespace ASPNETHomework.DAL.Contexts
 		/// Providers.
 		/// </summary>
 		public DbSet<Provider> Providers { get; set; }
+
+		/// <summary>
+		/// Users.
+		/// </summary>
+		public DbSet<User> Users { get; set; }
+
+		/// <summary>
+		/// Roles.
+		/// </summary>
+		public DbSet<Role> Roles { get; set; }
+
+		/// <summary>
+		/// User roles.
+		/// </summary>
+		public DbSet<UserRoles> UserRoles { get; set; }
 
 		/// <summary>
 		/// Initialize an instance <see cref="AspNetHomeworkContext"/>
